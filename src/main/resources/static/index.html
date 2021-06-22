@@ -5,6 +5,10 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<p>Get your greeting <a href="/greeting">here</a></p>
+<h1 th:inline="text">Service for choosing cookies</h1>
+<p>Show all information <a href="/greeting">here</a></p>
+<form th:action="@{/logout}" method="post">
+  <input type="submit" value="Sign Out"/>
+</form>
 </body>
 </html>
