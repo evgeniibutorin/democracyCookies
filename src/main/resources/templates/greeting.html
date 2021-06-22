@@ -5,6 +5,59 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<p th:text="'Hello, ' + ${name} + '!'" />
+<form th:action="@{/logout}" method="post">
+  <input type="submit" value="Sign Out"/>
+</form>
+<h2>All cookies</h2>
+<table>
+  <thead>
+  <tr>
+    <th> Description </th>
+    <th> Tag </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:if="${cookies.empty}">
+    <td colspan="2"> No Cookies Available </td>
+  </tr>
+  <tr th:each="cookie : ${cookies}">
+    <td><span th:text="${cookie.description}"> Description </span></td>
+    <td><span th:text="${cookie.tag}"> Tag </span></td>
+  </tr>
+  </tbody>
+</table>
+
+<br>
+<br>
+<form action="#" th:action="@{/greeting}" th:object="${cookies}" method="post">
+  <!--  <fieldset>-->
+  <p>Description: <input type="text" name ="description"></p>
+  <p>Tag: <input type="text" name="tag"></p>
+  <button type="submit">Add</button>
+</form>
+
+<!--<div>-->
+<!--<form action="#" th:action="@{/cookies/save}" th:object="${form}"-->
+<!--      method="post">-->
+<!--  <fieldset>-->
+<!--    <input type="submit" id="submitButton" th:value="Save">-->
+<!--    <input type="reset" id="resetButton" name="reset" th:value="Reset"/>-->
+<!--    <table>-->
+<!--      <thead>-->
+<!--      <tr>-->
+<!--        <th> Description</th>-->
+<!--        <th> Tag</th>-->
+<!--      </tr>-->
+<!--      </thead>-->
+<!--      <tbody>-->
+<!--      <tr th:each="cookie : ${cookies}">-->
+<!--        <td><input th:field="*{cookies.description}" /></td>-->
+<!--        <td><input th:field="*{cookies.tag}" /></td>-->
+<!--      </tr>-->
+<!--      </tbody>-->
+<!--    </table>-->
+<!--&lt;!&ndash;  </fieldset>&ndash;&gt;-->
+<!--</form>-->
+<!--</div>-->
 </body>
 </html>

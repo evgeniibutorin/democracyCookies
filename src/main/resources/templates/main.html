@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>All cookies</h2>
+<table>
+  <thead>
+  <tr>
+    <th> Title </th>
+    <th> Author </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:if="${cookies.empty}">
+    <td colspan="2"> No Cookies Available </td>
+  </tr>
+  <tr th:each="cookie : ${cookies}">
+    <td><span th:text="${cookie.description}"> Description </span></td>
+    <td><span th:text="${book.tag}"> Tag </span></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

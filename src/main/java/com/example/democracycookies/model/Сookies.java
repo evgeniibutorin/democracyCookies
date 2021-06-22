@@ -1,6 +1,7 @@
 package com.example.democracycookies.model;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@NoArgsConstructor
 public class Сookies {
 
     @Id
@@ -23,4 +25,8 @@ public class Сookies {
     @Setter
     private String tag;
 
+    public Сookies(String description, String tag) {
+        this.description = description;
+        this.tag = tag;
+    }
 }
