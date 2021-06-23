@@ -13,7 +13,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter
     @Setter
-    int id;
+    Integer id;
     @Getter
     @Setter
     private String username;
