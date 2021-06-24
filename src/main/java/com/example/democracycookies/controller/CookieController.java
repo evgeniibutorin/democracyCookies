@@ -1,11 +1,9 @@
 package com.example.democracycookies.controller;
 
-import com.example.democracycookies.model.Сookies;
+import com.example.democracycookies.model.Product;
 import com.example.democracycookies.repository.CookiesRepository;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
 
@@ -20,16 +18,16 @@ public class CookieController {
 
     @GetMapping("/greeting")
     public String greeting(Map<String, Object> model) {
-        Iterable<Сookies> сookies = cookiesRepository.findAll();
-        model.put("cookies", сookies);
+        Iterable<Product> products = cookiesRepository.findAll();
+        model.put("cookies", products);
         return "greeting.html";
     }
 
     @PostMapping("/greeting")
-    public String saveCookies(@ModelAttribute Сookies cookies, Map<String, Object> model){
+    public String saveCookies(@ModelAttribute Product cookies, Map<String, Object> model){
         cookiesRepository.save(cookies);
-        Iterable<Сookies> сookies = cookiesRepository.findAll();
-        model.put("cookies", сookies);
+        Iterable<Product> products = cookiesRepository.findAll();
+        model.put("cookies", products);
         return "greeting.html";
 
     }

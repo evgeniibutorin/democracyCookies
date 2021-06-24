@@ -4,14 +4,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
-public class Сookies {
+public class Product {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -25,7 +23,12 @@ public class Сookies {
     @Setter
     private String tag;
 
-    public Сookies(String description, String tag) {
+    @Getter
+    @Setter
+    @OneToMany
+    List<Comment> comments;
+
+    public Product(String description, String tag) {
         this.description = description;
         this.tag = tag;
     }
