@@ -32,37 +32,4 @@ public class CookieController {
 
     }
 
-//    @PostMapping("/save")
-//    public String addCookies(@RequestParam String description,
-//                             @RequestParam String tag,
-//                             Map<String, Object> model){
-//        Сookies cookie = new Сookies(description,tag);
-//        cookiesRepository.save(cookie);
-//        Iterable<Сookies> сookies =
-//                cookiesRepository.findAll();
-//        model.put("cookies", сookies);
-//        return "greeting.html";
-//
-//    }
-
-//@Controller
-//public class CookieController {
-//    @GetMapping("/greeting")
-//    public String greeting(@RequestParam(name = "name", required = false, defaultValue = "World") String name, Model model) {
-//        model.addAttribute("name", name);
-//        return "greeting.html";
-//    }
-
-
-//@RestController
-//public class CookieController {
-//
-//    @GetMapping("/greeting")
-//    public ModelAndView greeting(){
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("greeting.html");
-//        return modelAndView;
-//    }
-
-
 }
