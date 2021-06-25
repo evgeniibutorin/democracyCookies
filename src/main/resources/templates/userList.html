@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+<h2>Users</h2>
+<tr th:each="user : ${users}">
+    <td><span th:text="${user.username}"> Description </span></td>
+    <td><span th:text="${cookie.password}"> Tag </span></td>
+</tr>
+</body>
+</html>
